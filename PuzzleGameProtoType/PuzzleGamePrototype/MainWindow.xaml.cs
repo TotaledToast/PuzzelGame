@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace PuzzleGamePrototype
 {
@@ -27,12 +28,19 @@ namespace PuzzleGamePrototype
         public MainWindow()
         {
             InitializeComponent();
+            GameStart();
+
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space && PressSpace.IsVisible == true)
             {
-                PressSpace.Visibility = Visibility.Collapsed;
+                PressSpace.Visibility = Visibility.Hidden;
+                Slider1.Visibility = Visibility.Visible;
+                Slider2.Visibility = Visibility.Visible;
+                Slider3.Visibility = Visibility.Visible;
+                Slider_Checker.Visibility = Visibility.Visible;
+                Slider_Hidden_Image.Visibility = Visibility.Visible;
             }
             else if (PressSpace.IsVisible == true)
             {
@@ -49,16 +57,20 @@ namespace PuzzleGamePrototype
 
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Slider_Checker_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Slider1.Value == 6 && Slider2.Value == 7 && Slider3.Value == 2)
+            {
+                Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Found.jpg");
+                Slider_Checker.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF50E617");
+            }
+            else if(Slider_Hidden_Image.Source == (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Hidden.jpg"))
+            {
+                Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Wrong Answer.jpg");
+                Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Hidden.jpg");
+            }
         }
-    }
-    public class LoadNewLevel
-    {
-        public static void LoadLevel1()
-        {
 
-        }
+
     }
 }

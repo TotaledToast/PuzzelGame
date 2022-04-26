@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gray%20found.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bitmap1.bmp")]
 
 
