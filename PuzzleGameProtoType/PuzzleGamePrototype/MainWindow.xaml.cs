@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Timers;
 
 namespace PuzzleGamePrototype
 {
@@ -35,12 +36,8 @@ namespace PuzzleGamePrototype
         {
             if (e.Key == Key.Space && PressSpace.IsVisible == true)
             {
-                PressSpace.Visibility = Visibility.Hidden;
-                Slider1.Visibility = Visibility.Visible;
-                Slider2.Visibility = Visibility.Visible;
-                Slider3.Visibility = Visibility.Visible;
-                Slider_Checker.Visibility = Visibility.Visible;
-                Slider_Hidden_Image.Visibility = Visibility.Visible;
+                SpacePressed();
+                GameWindow.Title = "RGB";
             }
             else if (PressSpace.IsVisible == true)
             {
@@ -63,14 +60,25 @@ namespace PuzzleGamePrototype
             {
                 Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Found.jpg");
                 Slider_Checker.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF50E617");
+                Slider_Checker.Tag = "Clicked";
             }
-            else if(Slider_Hidden_Image.Source == (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Hidden.jpg"))
+            else if(Slider_Checker.Tag.ToString() == "NotClicked")
             {
                 Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Wrong Answer.jpg");
-                Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Hidden.jpg");
+                Task.Delay(450).ContinueWith(t => this.Dispatcher.Invoke(() => { Slider_Hidden_Image.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(@"../../Images/Gray Hidden.jpg"); }));
             }
         }
 
-
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Convert.ToInt32(ComboRed.SelectedIndex) == 2 && Convert.ToInt32(ComboGreen.SelectedIndex) == 4 && Convert.ToInt32(ComboBlue.SelectedIndex) == 5)
+            {
+                RGBComboAnswer.Visibility = Visibility.Visible;
+                GameWindow.Title = "PuzzleGame";
+                ComboRed.IsEnabled = false;
+                ComboGreen.IsEnabled = false;
+                ComboBlue.IsEnabled = false;
+            }
+        }
     }
 }
