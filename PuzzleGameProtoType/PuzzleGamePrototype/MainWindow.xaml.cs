@@ -80,5 +80,64 @@ namespace PuzzleGamePrototype
                 ComboBlue.IsEnabled = false;
             }
         }
+
+        private void Border_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NativeMethods.SetCursorPos(Convert.ToInt32(GetWindowLeft(GameWindow)) + 195, Convert.ToInt32(GetWindowTop(GameWindow)) + 70);
+        }
+
+        private void Border_Click_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Border_Button_1.Content = "2194";
+        }
+
+        private void Colour_Guess_Start_Click(object sender, RoutedEventArgs e)
+        {
+            Colour_Guess_Start_1();
+        }
+
+        private void Colour_Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<char> PressOrder = new List<char>
+            {
+                '3','6','8','1','5','4','2','9','7','3','1','5'
+            };
+            if (((Button)sender).Tag.ToString() == PressOrder[Convert.ToInt32(Colour_Guess_Start.Tag.ToString())].ToString())
+            {
+                Colour_Guess_Start.Tag = ((Convert.ToInt32(Colour_Guess_Start.Tag.ToString())) + 1).ToString();
+                if (Colour_Guess_Start.Tag.ToString() == "12")
+                {
+                    Colour_Guess_Start.Content = "3249";
+                    Colour_Click_1.IsEnabled = false;
+                    Colour_Click_2.IsEnabled = false;
+                    Colour_Click_3.IsEnabled = false;
+                    Colour_Click_4.IsEnabled = false;
+                    Colour_Click_5.IsEnabled = false;
+                    Colour_Click_6.IsEnabled = false;
+                    Colour_Click_7.IsEnabled = false;
+                    Colour_Click_8.IsEnabled = false;
+                    Colour_Click_9.IsEnabled = false;
+                    Colour_Guess_Start.IsEnabled = false;
+
+                }
+            }
+
+        }
+
+        void CPS_Button_Click(object sender, EventArgs e)
+        {
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = 1000; // 1000 miliseconds = 1 second
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Enabled = true;
+        }
+        void timer_Tick(object sender, EventArgs e)
+        {
+            // Do what you need
+            var clicks = _klicks;
+            // method to save clicks to the file
+            _klicks = 0;
+            return clicks;
+        }
     }
 }

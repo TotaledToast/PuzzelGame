@@ -9,14 +9,14 @@
         Title="PuzzleGame" Height="450" Width="800"
         
         KeyDown="Window_KeyDown">
-    <Grid>
+    <Grid RenderTransformOrigin="0.538,0.389">
         <TextBlock x:Name="PressSpace" Height="20" Margin="10,202,10,197" TextWrapping="Wrap" Text="Press Space" Width="772" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Visibility="Hidden"/>
         <Slider x:Name="Slider1" Width="100" Value="0" Orientation="Horizontal" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="10" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" Ticks="0,1,2,3,4,5,6,7,8,9" Margin="623,82,0,302"/>
         <Slider x:Name="Slider2" Width="100" Value="0" Orientation="Horizontal" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="10" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" Ticks="0,1,2,3,4,5,6,7,8,9" Margin="623,122,0,262" />
         <Slider x:Name="Slider3" Width="100" Value="0" Orientation="Horizontal" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="10" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" Ticks="0,1,2,3,4,5,6,7,8,9" Margin="623,162,0,222" />
         <Button x:Name="Slider_Checker" Content="Check" HorizontalAlignment="Left" Height="115" Margin="728,82,0,0" VerticalAlignment="Top" Width="54" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Slider_Checker_Click" Background="#FFDDDDDD" Tag="NotClicked"/>
         <Image x:Name="Slider_Hidden_Image" HorizontalAlignment="Left" Height="67" Margin="623,10,0,0" VerticalAlignment="Top" Width="159" Source="Images/Gray Hidden.jpg"  />
-        <ComboBox x:Name="ComboRed" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
+        <ComboBox x:Name="ComboRed" HorizontalAlignment="Left" Height="25" Margin="622,209,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Foreground="Moccasin">1</TextBlock>
             </StackPanel>
@@ -45,7 +45,7 @@
                 <TextBlock Foreground="Purple">9</TextBlock>
             </StackPanel>
         </ComboBox>
-        <ComboBox x:Name="ComboGreen" HorizontalAlignment="Left" Height="25" Margin="65,10,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
+        <ComboBox x:Name="ComboGreen" HorizontalAlignment="Left" Height="25" Margin="677,209,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Foreground="Maroon">1</TextBlock>
             </StackPanel>
@@ -74,7 +74,7 @@
                 <TextBlock Foreground="Yellow">9</TextBlock>
             </StackPanel>
         </ComboBox>
-        <ComboBox x:Name="ComboBlue" HorizontalAlignment="Left" Height="25" Margin="120,10,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
+        <ComboBox x:Name="ComboBlue" HorizontalAlignment="Left" Height="25" Margin="732,209,0,0" VerticalAlignment="Top" Width="50" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Foreground="OrangeRed">1</TextBlock>
             </StackPanel>
@@ -103,15 +103,35 @@
                 <TextBlock Foreground="Bisque">9</TextBlock>
             </StackPanel>
         </ComboBox>
-        <TextBlock x:Name="RGBComboAnswer" HorizontalAlignment="Left" Height="19" Margin="10,40,0,0" TextWrapping="Wrap" Text="1927" VerticalAlignment="Top" Width="160" TextAlignment="Center" Visibility="Hidden"/>
+        <TextBlock x:Name="RGBComboAnswer" HorizontalAlignment="Left" Height="19" Margin="622,239,0,0" TextWrapping="Wrap" Text="1927" VerticalAlignment="Top" Width="160" TextAlignment="Center" Visibility="Collapsed"/>
         <ListBox x:Name="_1st_Stage_Master_Answer" HorizontalAlignment="Left" Height="157" Margin="350,82,0,0" VerticalAlignment="Top" Width="160">
-            <RichTextBox Width="150"/>
-            <RichTextBox Width="150"/>
-            <RichTextBox Width="150"/>
-            <RichTextBox Width="150"/>
-            <RichTextBox Width="150"/>
-            <RichTextBox Width="150"/>
+            <TextBox Width="150" MaxLines="1" MaxLength="3"/>
+            <TextBox Width="150" MaxLength="3" MaxLines="1"/>
+            <TextBox Width="150" MaxLength="3" MaxLines="1"/>
+            <TextBox Width="150" MaxLength="3" MaxLines="1"/>
+            <TextBox Width="150" MaxLength="3" MaxLines="1"/>
+            <TextBox Width="150" MaxLength="3" MaxLines="1"/>
         </ListBox>
+        <Button x:Name="Border_Button_1" Content="" HorizontalAlignment="Left" Height="67" Margin="55,62,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_2" Content="" HorizontalAlignment="Left" Height="81" Margin="170,62,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_3" Content="" HorizontalAlignment="Left" Height="29" Margin="60,133,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_4" Content="" HorizontalAlignment="Left" Height="76" Margin="170,143,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_5" Content="" HorizontalAlignment="Left" Height="44" Margin="55,175,0,0" VerticalAlignment="Top" Width="115" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_6" Content="" HorizontalAlignment="Left" Height="157" Margin="5,62,0,0" VerticalAlignment="Top" Width="50" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_7" Content="" HorizontalAlignment="Left" Height="17" Margin="55,170,0,0" VerticalAlignment="Top" Width="28" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Click_Button" Content="Click Me!" HorizontalAlignment="Left" Height="25" Margin="83,162,0,0" VerticalAlignment="Top" Width="87" Click="Border_Click_Button_Click"/>
+        <Button x:Name="Colour_Guess_Start" Content="Start!" HorizontalAlignment="Left" Height="19" Margin="13,285,0,0" VerticalAlignment="Top" Width="100" Click="Colour_Guess_Start_Click" Tag="0"/>
+        <Button x:Name="Colour_Click_1" Content="" HorizontalAlignment="Left" Height="30" Margin="13,309,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="1"/>
+        <Button x:Name="Colour_Click_2" Content="" HorizontalAlignment="Left" Height="30" Margin="48,309,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="2"/>
+        <Button x:Name="Colour_Click_3" Content="" HorizontalAlignment="Left" Height="30" Margin="83,309,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="3"/>
+        <Button x:Name="Colour_Click_4" Content="" HorizontalAlignment="Left" Height="30" Margin="13,344,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="4"/>
+        <Button x:Name="Colour_Click_5" Content="" HorizontalAlignment="Left" Height="30" Margin="48,344,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="5"/>
+        <Button x:Name="Colour_Click_6" Content="" HorizontalAlignment="Left" Height="30" Margin="83,344,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="6"/>
+        <Button x:Name="Colour_Click_7" Content="" HorizontalAlignment="Left" Height="30" Margin="13,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="7"/>
+        <Button x:Name="Colour_Click_8" Content="" HorizontalAlignment="Left" Height="30" Margin="48,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="8"/>
+        <Button x:Name="Colour_Click_9" Content="" HorizontalAlignment="Left" Height="30" Margin="83,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="9"/>
+        <Button x:Name="CPS_Button" Content="Button" HorizontalAlignment="Left" Height="53" Margin="280,304,0,0" VerticalAlignment="Top" Width="68" Click="CPS_Button_Click"/>
+
 
 
     </Grid>
