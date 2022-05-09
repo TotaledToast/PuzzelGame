@@ -121,23 +121,49 @@ namespace PuzzleGamePrototype
 
                 }
             }
+            else
+            {
+                Colour_Guess_Start.Tag = "0";
+                Colour_Guess_Start.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFE03217");
+                Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Colour_Guess_Start.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FDDDDDDD"); }));
+            }
 
         }
 
-        void CPS_Button_Click(object sender, EventArgs e)
+        private void CPS_Button_Click(object sender, RoutedEventArgs e)
         {
-            System.Timers.Timer timer = new System.Timers.Timer();
-            timer.Interval = 1000; // 1000 miliseconds = 1 second
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Enabled = true;
+            if (((Button)sender).Tag.ToString() == "0")
+            {
+                ((Button)sender).Tag = "1";
+                Task.Delay(1000).ContinueWith(a => this.Dispatcher.Invoke(() => { CPS_Button.IsEnabled = false;
+                if (Convert.ToInt32(((Button)sender).Tag.ToString()) >= 12)
+                {
+                    CPS_Button.Content = "672";
+                }
+                else
+                {
+                    CPS_Button.Content = "Try Again";
+                        ((Button)sender).Tag = "0";
+                    Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => {
+                        CPS_Button.IsEnabled = true;
+                        CPS_Button.Content = "Click Me Fast!";
+                    }));
+                }
+                }));
+            }
+            else
+            {
+                ((Button)sender).Tag = (Convert.ToInt32(((Button)sender).Tag.ToString()) + 1).ToString();
+            }
         }
-        void timer_Tick(object sender, EventArgs e)
+
+        private void Type_Race_Start_Button_Click(object sender, RoutedEventArgs e)
         {
-            // Do what you need
-            var clicks = _klicks;
-            // method to save clicks to the file
-            _klicks = 0;
-            return clicks;
+            Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFE03217");
+            Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFFDB230"); }));
+            Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFF4FD30"); }));
+            Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF2EE810"); }));
+
         }
     }
 }

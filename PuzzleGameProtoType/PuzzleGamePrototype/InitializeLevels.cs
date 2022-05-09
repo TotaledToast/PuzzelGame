@@ -50,6 +50,7 @@ namespace PuzzleGamePrototype
             Colour_Click_8.Visibility = Visibility.Collapsed;
             Colour_Click_9.Visibility = Visibility.Collapsed;
             Colour_Guess_Start.Visibility = Visibility.Collapsed;
+            CPS_Button.Visibility = Visibility.Collapsed;
         }
         public void SpacePressed()
         {
@@ -82,6 +83,7 @@ namespace PuzzleGamePrototype
             Colour_Click_8.Visibility = Visibility.Visible;
             Colour_Click_9.Visibility = Visibility.Visible;
             Colour_Guess_Start.Visibility = Visibility.Visible;
+            CPS_Button.Visibility = Visibility.Visible;
         }
         public partial class NativeMethods
         {

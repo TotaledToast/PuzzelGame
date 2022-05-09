@@ -105,7 +105,7 @@
         </ComboBox>
         <TextBlock x:Name="RGBComboAnswer" HorizontalAlignment="Left" Height="19" Margin="622,239,0,0" TextWrapping="Wrap" Text="1927" VerticalAlignment="Top" Width="160" TextAlignment="Center" Visibility="Collapsed"/>
         <ListBox x:Name="_1st_Stage_Master_Answer" HorizontalAlignment="Left" Height="157" Margin="350,82,0,0" VerticalAlignment="Top" Width="160">
-            <TextBox Width="150" MaxLines="1" MaxLength="3"/>
+            <TextBox Width="150" MaxLength="3" MaxLines="1"/>
             <TextBox Width="150" MaxLength="3" MaxLines="1"/>
             <TextBox Width="150" MaxLength="3" MaxLines="1"/>
             <TextBox Width="150" MaxLength="3" MaxLines="1"/>
@@ -113,7 +113,7 @@
             <TextBox Width="150" MaxLength="3" MaxLines="1"/>
         </ListBox>
         <Button x:Name="Border_Button_1" Content="" HorizontalAlignment="Left" Height="67" Margin="55,62,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
-        <Button x:Name="Border_Button_2" Content="" HorizontalAlignment="Left" Height="81" Margin="170,62,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
+        <Button x:Name="Border_Button_2" Content="" HorizontalAlignment="Left" Height="81" Margin="170,62,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD" Background="#FFDDDDDD"/>
         <Button x:Name="Border_Button_3" Content="" HorizontalAlignment="Left" Height="29" Margin="60,133,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
         <Button x:Name="Border_Button_4" Content="" HorizontalAlignment="Left" Height="76" Margin="170,143,0,0" VerticalAlignment="Top" Width="110" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
         <Button x:Name="Border_Button_5" Content="" HorizontalAlignment="Left" Height="44" Margin="55,175,0,0" VerticalAlignment="Top" Width="115" ClickMode="Hover" Click="Border_Button_Click" BorderBrush="#FFDDDDDD"/>
@@ -130,7 +130,10 @@
         <Button x:Name="Colour_Click_7" Content="" HorizontalAlignment="Left" Height="30" Margin="13,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="7"/>
         <Button x:Name="Colour_Click_8" Content="" HorizontalAlignment="Left" Height="30" Margin="48,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="8"/>
         <Button x:Name="Colour_Click_9" Content="" HorizontalAlignment="Left" Height="30" Margin="83,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="9"/>
-        <Button x:Name="CPS_Button" Content="Button" HorizontalAlignment="Left" Height="53" Margin="280,304,0,0" VerticalAlignment="Top" Width="68" Click="CPS_Button_Click"/>
+        <Button x:Name="CPS_Button" Content="Click Me Fast!" HorizontalAlignment="Left" Height="53" Margin="387,24,0,0" VerticalAlignment="Top" Width="89" Click="CPS_Button_Click" Tag="0" Background="#FFDDDDDD"/>
+        <TextBox x:Name="Type_Race_Master_Box" HorizontalAlignment="Left" Height="20" Margin="183,309,0,0" TextWrapping="Wrap" Text="Hello There How Are You?" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
+        <TextBox x:Name="Type_Race_Enter_Box" HorizontalAlignment="Left" Height="20" Margin="183,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
+        <Button x:Name="Type_Race_Start_Button" Content="Start Typing!" HorizontalAlignment="Left" Height="20" Margin="183,285,0,0" VerticalAlignment="Top" Width="145" Click="Type_Race_Start_Button_Click" Background="#FFDDDDDD"/>
 
 
 
