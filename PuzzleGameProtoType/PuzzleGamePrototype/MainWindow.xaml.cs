@@ -159,10 +159,28 @@ namespace PuzzleGamePrototype
 
         private void Type_Race_Start_Button_Click(object sender, RoutedEventArgs e)
         {
+            Type_Race_Enter_Box.IsEnabled = true;
             Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFE03217");
-            Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFFDB230"); }));
-            Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFF4FD30"); }));
-            Task.Delay(500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF2EE810"); }));
+            Type_Race_Enter_Box.MaxLength = 1;
+            Task.Delay(1000).ContinueWith(a => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFFDB230"); }));
+            Task.Delay(2000).ContinueWith(a => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFF4FD30"); }));
+            Task.Delay(3000).ContinueWith(a => this.Dispatcher.Invoke(() => { Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF2EE810");
+                Type_Race_Enter_Box.MaxLength = 24;
+
+            }));
+            Task.Delay(8000).ContinueWith(a => this.Dispatcher.Invoke(() => { Type_Race_Enter_Box.IsEnabled = false;
+                Type_Race_Start_Button.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#FDDDDDDD");
+                if (Type_Race_Enter_Box.Text == Type_Race_Master_Box.Text)
+                {
+                    Type_Race_Start_Button.Content = "4380";
+                    Type_Race_Start_Button.IsEnabled = false;
+                }
+                else
+                {
+                    Type_Race_Enter_Box.Text = "Try Again";
+                    Task.Delay(1500).ContinueWith(b => this.Dispatcher.Invoke(() => { Type_Race_Enter_Box.Text = ""; }));
+                }
+            }));
 
         }
     }
