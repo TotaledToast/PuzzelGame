@@ -131,9 +131,9 @@
         <Button x:Name="Colour_Click_8" Content="" HorizontalAlignment="Left" Height="30" Margin="48,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="8"/>
         <Button x:Name="Colour_Click_9" Content="" HorizontalAlignment="Left" Height="30" Margin="83,379,0,0" VerticalAlignment="Top" Width="30" Click="Colour_Button_Click" Tag="9"/>
         <Button x:Name="CPS_Button" Content="Click Me Fast!" HorizontalAlignment="Left" Height="53" Margin="387,24,0,0" VerticalAlignment="Top" Width="89" Click="CPS_Button_Click" Tag="0" Background="#FFDDDDDD"/>
-        <TextBox x:Name="Type_Race_Master_Box" HorizontalAlignment="Left" Height="20" Margin="183,309,0,0" TextWrapping="Wrap" Text="Hello There How Are You?" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
-        <TextBox x:Name="Type_Race_Enter_Box" HorizontalAlignment="Left" Height="20" Margin="183,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
-        <Button x:Name="Type_Race_Start_Button" Content="Start Typing!" HorizontalAlignment="Left" Height="20" Margin="183,285,0,0" VerticalAlignment="Top" Width="145" Click="Type_Race_Start_Button_Click" Background="#FFDDDDDD"/>
+        <TextBox x:Name="Type_Race_Master_Box" HorizontalAlignment="Left" Height="20" Margin="135,267,0,0" TextWrapping="Wrap" Text="Hello There How Are You?" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
+        <TextBox x:Name="Type_Race_Enter_Box" HorizontalAlignment="Left" Height="20" Margin="135,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
+        <Button x:Name="Type_Race_Start_Button" Content="Start Typing!" HorizontalAlignment="Left" Height="20" Margin="135,243,0,0" VerticalAlignment="Top" Width="145" Click="Type_Race_Start_Button_Click" Background="#FFDDDDDD"/>
 
 
 
